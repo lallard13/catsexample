@@ -23,8 +23,8 @@ public class User {
   private Integer userId;
   @Column(name = "username")
   private String username;
-  @Column(name = "password")
-  private String password;
+//  @Column(name = "password")
+//  private String password;
   @OneToMany(mappedBy = "owner", cascade = {CascadeType.MERGE, CascadeType.PERSIST})
   @JsonIgnoreProperties({"owner"})
   private List<Cat> Cats;

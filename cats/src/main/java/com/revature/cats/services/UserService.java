@@ -45,10 +45,10 @@ public class UserService {
 		}
 	}
 	
-	public Boolean checkCredentials(String username, String password) {
-	  // we just check if this username and password exists in the db
-	  return userRepository.findByUsernameAndPassword(username, password).size() > 0;
-	}
+//	public Boolean checkCredentials(String username, String password) {
+//	  // we just check if this username and password exists in the db
+//	  return userRepository.findByUsernameAndPassword(username, password).size() > 0;
+//	}
 	
 	public User createOrUpdate(User user) {
 		return userRepository.save(user);

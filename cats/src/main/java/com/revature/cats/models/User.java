@@ -23,8 +23,8 @@ public class User {
   private Integer userId;
   @Column(name = "username")
   private String username;
-  @Column(name = "password")
-  private String password;
+//  @Column(name = "password")
+//  private String password;
   @OneToMany(mappedBy = "owner", cascade = {CascadeType.MERGE, CascadeType.PERSIST})
   @JsonIgnoreProperties({"owner"})
   private List<Cat> Cats;
@@ -41,12 +41,12 @@ public class User {
     return username;
   }
   
-  public String getPassword() {
-    return password;
-  }
-  
-  public void setPassword(String password) {
-    this.password  = password;
+//  public String getPassword() {
+//    return password;
+//  }
+//  
+//  public void setPassword(String password) {
+//    this.password  = password;
   }
 
   public void setUsername(String username) {

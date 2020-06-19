@@ -39,14 +39,14 @@ public class UserController {
 		}
 	}
 	
-	@PostMapping
-	public User createNewUser(@RequestBody User user, HttpSession session) {
-	    if(session.getAttribute("isLoggedIn") != null && (Boolean) session.getAttribute("isLoggedIn")) {
-	      return userService.create(user);
-	    } else {
-	      throw new ResponseStatusException(HttpStatus.FORBIDDEN);
-	    }
-	}
+//	@PostMapping
+//	public User createNewUser(@RequestBody User user, HttpSession session) {
+//	    if(session.getAttribute("isLoggedIn") != null && (Boolean) session.getAttribute("isLoggedIn")) {
+//	      return userService.create(user);
+//	    } else {
+//	      throw new ResponseStatusException(HttpStatus.FORBIDDEN);
+//	    }
+//	}
 	
 	@PutMapping("/{id}")
 	public User createOrUpdateUserWithId(@RequestBody User user, @PathVariable Integer id) {
@@ -57,10 +57,10 @@ public class UserController {
 	// to store values on a session similar to express session, just add HTTPSession as a
 	// parameter to your controller method
 	// Then use methods on the session to set/get attributes
-	@PostMapping("/login")
-	public Boolean attemptLogin(@RequestBody Credentials creds, HttpSession session) {
-	  Boolean isLoggedIn = userService.checkCredentials(creds.getUsername(), creds.getPassword());
-	  session.setAttribute("isLoggedIn", isLoggedIn);
-	  return isLoggedIn;
-	}
+//	@PostMapping("/login")
+//	public Boolean attemptLogin(@RequestBody Credentials creds, HttpSession session) {
+//	  Boolean isLoggedIn = userService.checkCredentials(creds.getUsername(), creds.getPassword());
+//	  session.setAttribute("isLoggedIn", isLoggedIn);
+//	  return isLoggedIn;
+//	}
 }
